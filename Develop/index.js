@@ -4,7 +4,7 @@ const fs = require("fs");
 
 // defined variables
 const path = require("path");
-const generateMarkdown = require('.utils/generateMarkdown');
+const generateMarkdown = require('.utils/generateMarkdown.js');
 const { before } = require("node:test");
 
 // user inputs to generate README blocks
