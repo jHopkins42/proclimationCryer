@@ -10,50 +10,50 @@ const { before } = require("node:test");
 // user inputs to generate README blocks
 const questions = [
     {
-        type: "input",
         name: "name",
-        message: "What is your name?"
+        message: "What is your name?",
+        type: "input",
     },
     {
-        type: "input",
         name: "repo",
-        message: "What is your GitHub repository name?"
+        message: "What is your GitHub repository name?",
+        type: "input",
     },
     {
-        type: "input",
         name: "title",
-        message: "What is your project name?"
+        message: "What is your project name?",
+        type: "input",
     },
     {
-        type: "input",
         name: "description",
-        message: "What does your project do?"
+        message: "What does your project do?",
+         type: "input",
     },
     {
-        type: "input",
         name: "flight speeds",
-        message: "What is the flight speed of an unladen application?"
+        message: "What is the flight speed of an unladen application?",
+        type: "input",
     },
     {
-        type: "input",
         name: "quest",
-        message: "What is your quest, er unique elements of your code?"
+        message: "What is your quest, er unique elements of your code?",
+        type: "input",
     },
     {
-        type: "input",
         name: "dependencies",
-        message: "What does your project need (dependencies)?"
-    },
-    {
+        message: "What does your project need (dependencies)?", 
         type: "input",
-        name: "languages",
-        message: "What languages does this require?"
     },
     {
-        type: "checkbox",
+        
+        name: "languages",
+        message: "What languages does this require?",type: "input",
+    },
+    {
         name: "license",
-        message: "What is the licensing?",
-        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "CreativeCommons", "other", "none"]
+        message: "What is the licensing?", 
+        type: "checkbox",
+        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "CreativeCommons", "other", "none"],
     }
 
 ];
@@ -67,7 +67,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("checkpoint alpha - running questions");
-        writeToFile("./distREADME.md", generateMarkdown({...responses}));
+        writeToFile("./dist/README.md", generateMarkdown({ ...responses}));
         console.log("checkpoint beta: do the responses work?");
         console.log("and the cat is sitting on both the mouse and keyboard, so debugging will be needed.");
     });
