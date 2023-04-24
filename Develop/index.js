@@ -5,6 +5,7 @@ const fs = require("fs");
 // defined variables
 const path = require("path");
 const generateMarkdown = require('.utils/generateMarkdown');
+const { before } = require("node:test");
 
 // user inputs to generate README blocks
 const questions = [
@@ -57,14 +58,20 @@ const questions = [
 
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// writing the README
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Starting or initializing the app/program
+function init() {
+    inquirer.prompt(questions).then((responses) => {
+        console.log("checkpoint alpha - running questions");
+        writeToFile("./distREADME.md", generateMarkdown({...responses}));
+        console.log("checkpoint beta: do the responses work?");
+        console.log("and the cat is sitting on both the mouse and keyboard, so debugging will be needed.");
+    });
+}
 
 // Function call to initialize app
 init();
-
-
-// user inputs for generator
