@@ -47,7 +47,8 @@ const questions = [
     {
         
         name: "languages",
-        message: "What languages does this require?",type: "input",
+        message: "What languages does this require?",
+        type: "input",
     },
     {
         name: "license",
