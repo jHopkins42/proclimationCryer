@@ -4,7 +4,7 @@ const fs = require("fs");
 
 // defined variables
 const path = require("path");
-const generateMarkdown = require('.utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 const { before } = require("node:test");
 
 // user inputs to generate README blocks
@@ -38,6 +38,13 @@ const questions = [
         name: "quest",
         message: "What is your quest, er unique elements of your code?",
         type: "input",
+    },
+    {
+        name: "contributors",
+        message: "Who helped you with this nefarious deed?",
+        type: "input",
+
+
     },
     {
         name: "dependencies",
