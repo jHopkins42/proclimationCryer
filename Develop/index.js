@@ -20,6 +20,11 @@ const questions = [
         type: "input",
     },
     {
+        name: "email",
+        message: "How can you be reached?",
+        type: "input",
+    },
+    {
         name: "title",
         message: "What is your project name?",
         type: "input",
@@ -30,7 +35,7 @@ const questions = [
          type: "input",
     },
     {
-        name: "flight speeds",
+        name: "flightSpeeds",
         message: "What is the flight speed of an unladen application?",
         type: "input",
     },
@@ -50,6 +55,11 @@ const questions = [
         name: "dependencies",
         message: "What does your project need (dependencies)?", 
         type: "input",
+    },
+    {
+         name: "testing",
+         message: "Where did the testing get recorded?",
+         type: "input",
     },
     {
         
@@ -76,8 +86,7 @@ function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("checkpoint alpha - running questions");
         writeToFile("./dist/README.md", generateMarkdown({ ...responses}));
-        console.log("checkpoint beta: do the responses work?");
-        console.log("and the cat is sitting on both the mouse and keyboard, so debugging will be needed.");
+        console.log("checkpoint beta: the cat is sitting on both the mouse and keyboard, so debugging will be needed.");
     });
 }
 
