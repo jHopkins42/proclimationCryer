@@ -35,6 +35,11 @@ const questions = [
          type: "input",
     },
     {
+        name: "features",
+        message: "How does your project do what it does?",
+        type: "input",
+    },
+    {
         name: "flightSpeeds",
         message: "What is the flight speed of an unladen application?",
         type: "input",
@@ -85,7 +90,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("checkpoint alpha - running questions");
-        writeToFile("./dist/README.md", generateMarkdown({ ...responses}));
+        writeToFile("../.././miniature-eureka/dist/README.md", generateMarkdown({ ...responses}));
         console.log("checkpoint beta: the cat is sitting on both the mouse and keyboard, so debugging will be needed.");
     });
 }

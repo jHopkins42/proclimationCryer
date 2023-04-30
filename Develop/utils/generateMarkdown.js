@@ -7,10 +7,18 @@ function renderLicenseBadge(license) {
 
 
 // License link.  If "none" or "other", this returns an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) { 
+  if (license != "none") {
+  return `![license](https://img.shields.io/github/license/<jhopkins42>/<proclimationCryer>)`;
+}
+}
 
 // License section.  If "none" or "other", this returns an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license != "none") {
+    return `![license](https://img.shields.io/github/license/<jhopkins42>/<proclimationCryer>)`;
+  }
+}
 
 // coding to create the README file
 function generateMarkdown(data) {
